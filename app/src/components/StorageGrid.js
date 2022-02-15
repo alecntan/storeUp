@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import ItemTable from './ItemTable.js';
+import Alert from 'react-bootstrap/Alert';
 import { getItems } from '../server.js';
 
 
@@ -85,7 +86,7 @@ function EmbeddedItemTable(props) {
     return (
         <Container className='mb-3'>
             <Card.Title>Items</Card.Title> 
-            <p>Click on Item to Select</p>
+            <Alert variant={'info'}>Click on Item to Edit</Alert>
             { props.items.length > 0 ? <ItemTable items={props.items} handleEdit={props.handleEdit}/> : <p>No items</p> }
         </Container>
     );
