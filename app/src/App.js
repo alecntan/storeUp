@@ -71,31 +71,43 @@ function App() {
     };
 
     const [ formMessage, setFormMessage ] = useState('');
-    const handleFormResponse = (response) => {
+    const handleStorageFormResponse = (response, handleClose) => {
         if(!response.ok) {
             setFormMessage(response.headers.get('message'));
         } else {
             setFormMessage('');
+            handleCloseStorageForm();
         }
+
     };
+
+    const handleItemFormResponse = (response, handleClose) => {
+        if(!response.ok) {
+            setFormMessage(response.headers.get('message'));
+        } else {
+            setFormMessage('');
+            handleCloseItemForm();
+        }
+
+    };
+
 
     const handleOnSubmitStorage = (data) => {
 
         if(data['isEdit']) {
-            putStorage(data, handleFormResponse); 
+            putStorage(data, handleStorageFormResponse); 
         } else {
-            postStorage(data, handleFormResponse);
+            postStorage(data, handleStorageFormResponse);
         }
 
         getData();
-        handleCloseStorageForm();
     };
 
     const handleSubmitItem = (data) => {
         if(data['isEdit']) {
-            putItem(data, handleFormResponse);
+            putItem(data, handleItemFormResponse);
         } else {
-            postItem(data, handleFormResponse);
+            postItem(data, handleItemFormResponse);
         }
 
         getData();

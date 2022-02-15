@@ -27,7 +27,6 @@ export function NewStorageForm(props) {
         props.onSubmit(data);
     };
 
-
     return (
         <Modal
             show={props.onShow}
