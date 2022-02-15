@@ -79,7 +79,6 @@ export function deleteStorage(link) {
 }
 
 export function postItem(data, callback) {
-    console.log(data['content']);
     return fetch(data['link'], {
         method: 'POST',
         headers: {

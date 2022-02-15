@@ -71,8 +71,6 @@ export function NewStorageForm(props) {
 
 export function NewItemForm(props) {
 
-    const validStatus = ['In Storage', 'In Use', 'Missing', 'Broken'];
-
     const [name, setName] = useState(props.initValues.name);
     const handleNameChange = (e) => {
         setName(e.target.value);
@@ -169,7 +167,7 @@ export function NewItemForm(props) {
                     <Form.Group className='mb-3' controlId='itemStatus'>
                         <Form.Label>Status</Form.Label >
                         <Form.Select value={itemStatus} onChange={handleStatusChange}>
-                            {validStatus.map((is) => <option value={is} key={is}>{is}</option>)}
+                            {props.validStatus.map((is) => <option value={is} key={is}>{is}</option>)}
                         </Form.Select>
                     </Form.Group>
                     <Form.Group className='mb-3' controlId='storage'>

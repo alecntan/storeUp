@@ -38,11 +38,12 @@ function App() {
         toggleStorageForm();
     };
 
+    const validStatus = ['In Storage', 'In Use', 'Missing', 'Broken'];
     const emptyItemForm = { 'title'      : 'Register Item', 
                             'name'       : '',
                             'identifier' : nanoid(),
                             'storage'    : '',
-                            'status'     : '',
+                            'status'     : validStatus[0],
                             'category'   : '',
                             'serialNum'  : '',
                             'owner'      : '',
@@ -114,7 +115,7 @@ function App() {
                            'name'       : '',
                            'identifier' : nanoid(),
                            'storage'    : storageName,
-                           'status'     : '',
+                           'status'     : validStatus[0],
                            'category'   : '',
                            'serialNum'  : '',
                            'owner'      : '',
@@ -136,7 +137,7 @@ function App() {
         <Container className='mt-5'>
             <ActionBar newItem={toggleItemForm} newStorage={toggleStorageForm} />
             <StorageGrid onEditStorage={handleEditStorage}  onEditItem={handleEditItem} onDeleteStorage={handleDeleteStorage} onAddItem={handleAddItem} storages={storages} /> 
-            { showItemForm ? <NewItemForm initValues={itemFormValues} storages={storages} onSubmit={handleSubmitItem} onShow={showItemForm} formMessage={formMessage} onToggle={handleCloseItemForm} onDeleteItem={handleDeleteItem}/> : null }
+            { showItemForm ? <NewItemForm initValues={itemFormValues} validStatus={validStatus} storages={storages} onSubmit={handleSubmitItem} onShow={showItemForm} formMessage={formMessage} onToggle={handleCloseItemForm} onDeleteItem={handleDeleteItem}/> : null }
             { showStorageForm ?  <NewStorageForm initValues={storageFormValues} onSubmit={handleOnSubmitStorage} formMessage={formMessage} onShow={showStorageForm} onClose={handleCloseStorageForm} /> : null }
         </Container>
     );
