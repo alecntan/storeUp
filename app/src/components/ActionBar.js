@@ -1,30 +1,27 @@
-import { React } from 'react'
-import { ArrowUpSquareFill } from 'react-bootstrap-icons';
-import NewButton from './NewButton.js';
+import { React, useState } from 'react';
+
+// React-Bootstrap
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+// React-Icons
+import { BsFillArrowUpSquareFill } from 'react-icons/bs';
+
+// Components
+import NewStorageButton from './NewStorageButton.js';
 
 
 export default function ActionBar(props) {
     return (
-        <>
-        <Container>
+        <Container fluid>
             <Row>
-                <Col md='auto'><h3>Store <ArrowUpSquareFill /></h3></Col>
-                <ManageStorage newItem={props.newItem} newStorage={props.newStorage} />
+                <Col><h3>Store <BsFillArrowUpSquareFill /></h3></Col>
+                <Col className='d-flex justify-content-end'><NewStorageButton /></Col>
             </Row>
+            <hr />
         </Container>
-        <hr />
-        </>
     );
 }
 
-function ManageStorage(props) {
-    return (
-        <Col className='d-flex justify-content-end'>
-            <NewButton newItem={props.newItem} newStorage={props.newStorage} />
-        </Col>
-    );
-}
 
