@@ -19,7 +19,7 @@
 
 ## About the Project
 
-StoreUP is a single-page client application for the APInventory API. To read more about the project's story, click [here](https://blog.alectan.dev/Inventory_System/)
+StoreUP is a single-page client application for the APInventory API.
 
 ### Built With
 <ul>
