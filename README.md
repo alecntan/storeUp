@@ -9,8 +9,6 @@
     A single-page client application for the APInventory API!
     <br />
     <a href="https://apinventory.alectan.dev/storeup/">Demo</a>
-    ·
-    <a href="https://blog.alectan.dev/Inventory_System/">About</a>
   </p>
 </div>
 <br />
